@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component} from 'react';
 import './App.css';
+import Person from './Person/Person'
 
-function App() {
+class App extends Component{
+  state={
+persons:[
+  {name:'Rajesh',age:24},
+  {name:'Neeraj',age:26},
+  {name:'Amit',age:25}
+]
+  }
+render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hi i am React App
+      <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+      <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>My hobby is to play cricket</Person>
+      <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
     </div>
+    // React.createElement('div' ,{className:'custom'},'hii thsi is react')
   );
 }
-
+}
 export default App;
